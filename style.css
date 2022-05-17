@@ -1,0 +1,185 @@
+* {
+  box-sizing: border-box;
+  
+}
+body {
+  margin: 0;
+  padding: 0;
+  /* background-color: #f1f5f8; */
+  background-color: #191919;
+  font-family: "Zilla Slab", serif;
+
+}
+h2 {
+  font-family: "Great Vibes", cursive;
+  font-size: 3rem;
+  text-align: center;
+  /* color: #ff6a23; */
+  color:rgba(205, 0, 0, 0.605);
+  font-weight: bolder;
+  letter-spacing: 4px;
+}
+.menu {
+  margin-top: 20px;
+}
+.btn-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 40px 0;
+  position: relative;
+}
+.btn-item {
+  margin-left: 15px;
+}
+.photo {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border: 0.1rem solid #191919;
+  border-radius: 10px;
+}
+.menu-items {
+  display: flex;
+  margin: 20px 0;
+}
+.menu-info {
+  margin-left: 20px;
+  width: 100%;
+}
+.menu-title {
+  display: flex;
+  justify-content: space-between;
+  border-bottom: 1px solid black;
+}
+h4 {
+  color: #e00a00;
+}
+.menu-text {
+  padding-top: 20px;
+}
+.mealBox{
+  width: 550px;
+  height: 250px;
+  background-color: #ddd;
+  margin-right:50px;
+  margin-left: 40px;
+  margin-bottom: 50px;
+  border-radius: 16px;
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(5.8px);
+  -webkit-backdrop-filter: blur(5.8px);
+  border: 3px solid rgba(205, 0, 0, 0.605);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: all 0.1 ease;
+}
+.section-center{
+  margin: auto !important;
+  display: flex;
+  justify-content: center;
+  box-sizing: border-box;
+}
+.imgBox{
+  width: 40%;
+  height: 80%;
+  margin-right: 5px;
+}
+.contentBox{
+  width: 55%;
+  height: 80%;
+  position: relative;
+}
+.mealTitle{
+  color: rgba(205, 0, 0, 0.605);
+  font-weight:bolder;
+  font-family: "Great Vibes", cursive;
+  font-size: 2em;
+  letter-spacing: 3px;
+  text-align: center;
+  
+}
+.mealText{
+  text-align: center;
+  padding: 15px;
+  font-family: 'Fjalla One', sans-serif;
+  font-style: italic;
+}
+.price{
+  width: auto;
+  height: 25%;
+  position: absolute;
+  bottom: 0px;
+  right: 0px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.price h3{
+  color: rgba(207, 12, 12, 0.685);
+  font-family: 'Orelega One', cursive;
+  font-style: italic;
+}
+.mealHeader{
+  border-bottom: 0.05em solid #191919;
+}
+.mealBox:hover{
+  background-color: #191919;
+  color: #ddd;
+  transition: 0.1s;
+}
+.mealBox:hover .mealHeader{
+  border-bottom: 0.02em solid #ddd;
+}
+.mealBox:hover .photo {
+  border: 0.1rem solid #ddd;
+}
+.buttonClass {
+  /* height: 30px; */
+  background-color: rgba(205, 0, 0, 0.605);
+  color: #ddd;
+  outline: none;
+  border: none;
+  border-radius: 8px;
+  font-family: 'Orelega One', cursive;
+  margin-right: 10px;
+  padding: 8px;
+  border: 0.1em solid #191919;
+}
+
+.welcome{
+  width: auto;
+  height: auto;
+  position: absolute;
+  top: 40%;
+  color:rgba(205, 0, 0, 0.605);
+  margin:auto;
+  font-family: "Great Vibes", cursive;
+  letter-spacing: 40px;
+  font-size: 100px !important;
+  font-weight: bolder;
+}
+@media only screen and (max-width:550px){
+  .mealText{
+    padding: 10px;
+    font-size: 12px;
+  }
+  .price{
+    position: absolute;
+    bottom: -20px;
+  }
+  .price h3{
+    font-size: 18px;
+  }
+  .mealTitle{
+    font-size: 25px;
+  }
+}
+
+.add-menu{
+  position: absolute;
+  top: 0;
+  right: 50px;
+}
+
