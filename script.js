@@ -167,7 +167,7 @@ class UI{
                 </p>
                 </div>
                 <div class="price">
-                <h3>${element.price} ₺</h3>
+                <h3>${element.price} $</h3>
                 </div>
                 </div>
         </div>
@@ -208,7 +208,7 @@ class addMenuClass{
                 descriptionValue.innerHTML = descriptionInput.value;
               }
               priceInput.oninput = () => {
-                priceValue.innerHTML = priceInput.value + " ₺";
+                priceValue.innerHTML = priceInput.value + " $";
               } 
         })
     }
