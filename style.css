@@ -267,8 +267,6 @@ textarea{
   .create{
     width: 520px;
     height: auto;
-    background-color: aquamarine;
-    margin-right: 0px !important;
 }
   .createBox{
     width: 520px;
@@ -313,8 +311,6 @@ textarea{
   .create{
     width: 500px;
     height: auto;
-    background-color: aquamarine;
-    margin-right: 0px !important;
 }
   .createBox{
     width: 500px;
@@ -364,8 +360,6 @@ textarea{
   .create{
     width: 95%;
     height: auto;
-    background-color: aquamarine;
-    margin-right: 0px !important;
 }
   .createBox{
     width: 100%;
@@ -425,8 +419,6 @@ textarea{
   .create{
     width: 95%;
     height: auto;
-    background-color: aquamarine;
-    margin-right: 0px !important;
 }
   .createBox{
     width: 100%;
@@ -442,6 +434,9 @@ textarea{
   }
   .input-group{
     width:100%;
+  }
+  .input-group input{
+    font-size: 10px;
   }
 
   #mealBox{
