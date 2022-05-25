@@ -5,33 +5,85 @@
 body {
   margin: 0;
   padding: 0;
-  /* background-color: #f1f5f8; */
   background-color: #191919;
   font-family: "Zilla Slab", serif;
 
 }
+
+/* Header Start */
 h2 {
   font-family: "Great Vibes", cursive;
   font-size: 3rem;
   text-align: center;
-  /* color: #ff6a23; */
-  color:rgba(205, 0, 0, 0.605);
+  color: #ddd;
+  /* color:rgba(205, 0, 0, 0.605); */
   font-weight: bolder;
-  letter-spacing: 4px;
+  letter-spacing: 6px;
 }
 .menu {
-  margin-top: 20px;
+  margin-top: 15px;
 }
+
 .btn-container {
   display: flex;
   justify-content: center;
   align-items: center;
-  margin: 40px 0;
+  margin: 40px auto;
   position: relative;
+  width: 80%;
 }
-.btn-item {
-  margin-left: 15px;
+.btn-Category{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
 }
+
+.buttonClass {
+  min-width: 60px;
+  background-color: rgba(205, 0, 0, 0.605);
+  color: #ddd;
+  outline: none;
+  border: none;
+  border-radius: 8px;
+  font-family: 'Orelega One', cursive;
+  margin-right: 10px;
+  margin-bottom: 10px;
+  padding: 8px;
+  border: 0.1em solid #191919;
+}
+.btn-Category button:nth-last-child(1){
+    margin-right: 0px;
+}
+
+
+.addMenuBox{
+  position: absolute;
+  right: 0;
+  top: 0;
+}
+
+.add-menu{
+  background-color: rgba(205, 0, 0, 0.605);
+  color: #ddd;
+  outline: none;
+  border: none;
+  border-radius: 8px;
+  font-family: 'Orelega One', cursive;
+  padding: 8px;
+  border: 0.1em solid #191919;
+}
+
+.add-menu:hover{
+  background-color: #191919;
+  color: #ddd;
+  border: 1px solid rgba(205, 0, 0, 0.605);
+}
+
+/* Header End */
+
+
+/* Content Start */
 .photo {
   width: 100%;
   height: 100%;
@@ -39,31 +91,12 @@ h2 {
   border: 0.1rem solid #191919;
   border-radius: 10px;
 }
-.menu-items {
-  display: flex;
-  margin: 20px 0;
-}
-.menu-info {
-  margin-left: 20px;
-  width: 100%;
-}
-.menu-title {
-  display: flex;
-  justify-content: space-between;
-  border-bottom: 1px solid black;
-}
-h4 {
-  color: #e00a00;
-}
-.menu-text {
-  padding-top: 20px;
-}
+
 .mealBox{
   width: 550px;
   height: 250px;
   background-color: #ddd;
   margin-right:50px;
-  margin-left: 40px;
   margin-bottom: 50px;
   border-radius: 16px;
   box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
@@ -73,6 +106,7 @@ h4 {
   display: flex;
   justify-content: center;
   align-items: center;
+  z-index: 2;
   transition: all 0.1 ease;
 }
 .section-center{
@@ -91,11 +125,12 @@ h4 {
   height: 80%;
   position: relative;
 }
+
 .mealTitle{
   color: rgba(205, 0, 0, 0.605);
   font-weight:bolder;
   font-family: "Great Vibes", cursive;
-  font-size: 2em;
+  font-size: 1.7em;
   letter-spacing: 3px;
   text-align: center;
   
@@ -110,8 +145,8 @@ h4 {
   width: auto;
   height: 25%;
   position: absolute;
-  bottom: 0px;
-  right: 0px;
+  bottom: -20px;
+  right: -5px;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -129,57 +164,290 @@ h4 {
   color: #ddd;
   transition: 0.1s;
 }
+.mealBox:hover .mealTitle{
+  color: #ddd;
+}
+.mealBox:hover .price h3{
+  color: #ddd;
+}
+
 .mealBox:hover .mealHeader{
-  border-bottom: 0.02em solid #ddd;
+  border-bottom: 0.01em solid rgba(207, 12, 12, 0.685);
 }
 .mealBox:hover .photo {
   border: 0.1rem solid #ddd;
 }
-.buttonClass {
-  /* height: 30px; */
-  background-color: rgba(205, 0, 0, 0.605);
+
+/* Create Menu Start */
+
+.create{
+  width: 750px;
+  height: 650px;
+  margin: auto;
+  display:flex ;
+  flex-direction: column;
+  /* justify-content: center; */
+  align-items: center;
+  display: none;
+}
+
+.createBox{
+  width: 750px;
+  height: auto;
+  border-radius: 16px;
+  background: #ddd;
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.4);
+  backdrop-filter: blur(9px);
+  -webkit-backdrop-filter: blur(8px);
+  border: 3px solid rgba(205, 0, 0, 0.605);
+  margin-right: 50px;
+  margin-top: -70px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 40px 0px 20px 0px;
+  z-index: 1;
+}
+
+.createContent{
+  width: 550px;
+  height: auto;
+  border-radius: 16px;
+  padding: 10px;
+}
+
+.input-group{
+  width: 80%;
+  margin: auto;
+  margin-top: 10px;
+}
+input {
+  border: 2px solid #191919 !important;
+  border-left: none !important;
+}
+textarea{
+  border: 2px solid #191919 !important;
+  border-left: none !important;
+
+}
+.input-group span{
+  border: 2px solid #191919 !important;
+
+}
+
+#create-btn{
+  background-color: #191919;
   color: #ddd;
   outline: none;
   border: none;
   border-radius: 8px;
   font-family: 'Orelega One', cursive;
-  margin-right: 10px;
   padding: 8px;
   border: 0.1em solid #191919;
 }
 
-.welcome{
-  width: auto;
-  height: auto;
-  position: absolute;
-  top: 40%;
-  color:rgba(205, 0, 0, 0.605);
-  margin:auto;
-  font-family: "Great Vibes", cursive;
-  letter-spacing: 40px;
-  font-size: 100px !important;
-  font-weight: bolder;
+#create-btn:hover{
+  background-color: #ddd;
+  border: 0.1em solid #191919;
+  color: #191919;
 }
-@media only screen and (max-width:550px){
-  .mealText{
-    padding: 10px;
-    font-size: 12px;
+
+@media only screen and (min-width:600px) and (max-width:800px){
+  .btn-container{
+    margin: 80px auto 30px auto;
   }
-  .price{
-    position: absolute;
-    bottom: -20px;
+  .addMenuBox{
+    top : -60px ;
+    right: 40%;
+  }
+  .mealBox{
+    margin-right: 0px;
+  }
+  .create{
+    width: 520px;
+    height: auto;
+    background-color: aquamarine;
+    margin-right: 0px !important;
+}
+  .createBox{
+    width: 520px;
+    margin-top: -70px;
+    margin-bottom: 10px;
+    margin-right: 0px;
+    padding: 40px 0px 20px 0px;
+  }
+
+  #mealBox{
+    width: 400px;
+    height: 200px;
+  }
+
+}
+@media only screen and (min-width:550px) and (max-width:600px){
+
+  .btn-container{
+    margin: 80px auto 30px auto;
+  }
+
+  .addMenuBox{
+    top : -60px ;
+    right: 38%;
+  }
+  .mealBox{
+    width: 500px;
+    height: 230px;
+    margin-right:0px;
+    margin-bottom: 50px;
+  }
+
+  .mealTitle{
+    font-size: 1.3em;    
+  }
+
+  .mealText{
+    font-size: 15px;    
+
+  }
+
+  .create{
+    width: 500px;
+    height: auto;
+    background-color: aquamarine;
+    margin-right: 0px !important;
+}
+  .createBox{
+    width: 500px;
+    margin-top: -70px;
+    margin-bottom: 10px;
+    margin-right: 0px;
+    padding: 40px 0px 20px 0px;
+  }
+
+  #mealBox{
+    width: 400px;
+    height: 200px;
+  }
+
+}
+
+@media only screen and (min-width:400px) and (max-width:550px){
+
+  .btn-container{
+    margin: 80px auto 30px auto;
+  }
+  .buttonClass{
+    margin-right: 5px;
+    box-sizing: border-box;
+  }
+  .addMenuBox{
+    top : -60px ;
+    right: 33%;
+  }
+  .mealBox{
+    width: 400px;
+    height: 200px;
+    margin-right:0px;
+    margin-bottom: 20px;
+  }
+
+  .mealTitle{
+    font-size: 1.2em;    
+  }
+  .mealText{
+    font-size: 12px;    
   }
   .price h3{
-    font-size: 18px;
+    font-size: 15px;
   }
+
+  .create{
+    width: 95%;
+    height: auto;
+    background-color: aquamarine;
+    margin-right: 0px !important;
+}
+  .createBox{
+    width: 100%;
+    margin-top: -70px;
+    margin-bottom: 10px;
+    margin-right: 0px;
+    padding: 40px 0px 20px 0px;
+  }
+  .createContent {
+    width: 90%;
+    margin-top: 10px;
+    font-size: 12px;
+  }
+  .input-group{
+    width:100%;
+  }
+
+  #mealBox{
+    width: 80%;
+    height: 200px;
+    padding: 15px;
+  }
+
+}
+
+@media only screen and (max-width:400px){
+
+  .btn-container{
+    margin: 80px auto 30px auto;
+  }
+  .buttonClass{
+    margin-right: 5px;
+    box-sizing: border-box;
+  }
+  .addMenuBox{
+    top : -60px ;
+    right: 33%;
+  }
+  .mealBox{
+    width: 300px;
+    height: 150px;
+    margin-right:0px;
+    margin-bottom: 20px;
+  }
+
   .mealTitle{
-    font-size: 25px;
+    font-size: 1.1em;    
   }
-}
 
-.add-menu{
-  position: absolute;
-  top: 0;
-  right: 50px;
-}
+  .mealText{
+    font-size: 8px;    
+  }
 
+  .price h3{
+    font-size: 10px;
+  }
+  .create{
+    width: 95%;
+    height: auto;
+    background-color: aquamarine;
+    margin-right: 0px !important;
+}
+  .createBox{
+    width: 100%;
+    margin-top: -70px;
+    margin-bottom: 10px;
+    margin-right: 0px;
+    padding: 40px 0px 20px 0px;
+  }
+  .createContent {
+    width: 90%;
+    margin-top: 10px;
+    font-size: 12px;
+  }
+  .input-group{
+    width:100%;
+  }
+
+  #mealBox{
+    width: 80%;
+    height: 200px;
+    padding: 15px;
+  }
+
+}

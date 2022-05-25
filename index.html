@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Asian Kitchen</title>
+    <title>World Kitchen</title>
     <!-- Fonts -->
     <link
       href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Zilla+Slab&display=swap"
@@ -24,25 +24,78 @@
       <section class="menu">
         <!-- title -->
         <div class="title mt-5">
-          <h2>Asian Kitchen's Menu</h2>
+          <h2>World Kitchen </h2>
         </div>
         <!--filter buttons-->
         <div class="btn-container">
-          <button class="buttonClass add-menu" id="addMenu">
-            <i class="fa-solid fa-plus"></i>
-            Add Menu
-          </button>
+          <div class="btn-Category">
+          </div>
+          <div class="addMenuBox">
+            <button class="add-menu" id="addMenu">
+              <i class="fa-solid fa-plus"></i>
+              Add Menu
+            </button>
+          </div>
         </div>
         <!-- menu items -->
         <div class="section-center row" id="content">
         </div> 
+        <div class="create" id="createMenu">
+          <div class="col-md-5 mealBox" id="mealBox">
+            <div class="imgBox">
+              <img class="photo"  src=https://media.istockphoto.com/vectors/image-place-holder-with-a-gray-camera-icon-vector-id1226328537?k=20&m=1226328537&s=612x612&w=0&h=2klft8QdMSyDj3oAmFyRyD24Mogj2OygLWrX9Lk6oGQ= alt="img">
+            </div>
+            <div class="contentBox">
+              <div class="mealHeader">
+                <h4 class="mealTitle" id="titleValue">Title</h4>
+              </div>
+              <div class="mealText">
+                <p id="descriptionValue">
+                  Description
+                </p>
+              </div>
+              <div class="price">
+                <h3 id="priceValue">Price ₺</h3>
+              </div>
+            </div>
+          </div>
+          <div class="createBox">
+            <div class="createContent">
+              <div class="input-group mb-3 ">
+                <span class="input-group-text" id="inputGroup-sizing-default">Title</span>
+                <input type="text" id="titleInput" autocomplete="off" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default">
+              </div>
+              <div class="input-group mb-3 ">
+                <span class="input-group-text" id="inputGroup-sizing-default">Category</span>
+                <input type="text" id="categoryInput" autocomplete="off" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default">
+              </div>
+              <div class="input-group mb-3 ">
+                <span class="input-group-text" id="inputGroup-sizing-default">Description</span>
+                <textarea id="descriptionInput" autocomplete="off" class="form-control" aria-label="With textarea"></textarea>
+              </div>
+              <div class="input-group mb-3 ">
+                <span class="input-group-text" id="inputGroup-sizing-default">Price</span>
+                <input type="text" id="priceInput" autocomplete="off" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default">
+              </div>
+              <div class="input-group mb-3 ">
+                <span class="input-group-text" id="inputGroup-sizing-default">Image (Url)</span>
+                <input type="text" id="imgInput" autocomplete="off" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default">
+              </div>
+            </div>
+            <div>
+              <button id="create-btn">Create</button>
+            </div>
+          </div>
+         
+          
+        </div>
+
       </section>
     </div>
-
 
     <!-- Bootstrap JS -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
     <!-- JS -->
-    <script src="app.js"></script>
+    <script src="script.js"></script>
   </body>
 </html>

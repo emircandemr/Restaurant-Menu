@@ -81,10 +81,14 @@ const menu = [
     desc: `Red bean paste dessert, serving with honey.`,
   },
 
-];  
+]; 
+
+const createMenu = document.querySelector("#createMenu");
+
 
 //---------------------- Button Create--------------------------------
-let buttonDOM = document.querySelector(".btn-container");
+
+let buttonDOM = document.querySelector(".btn-Category");
 
 const setButton = (element) =>{
   let createButton = document.createElement("button");
@@ -105,8 +109,7 @@ const setButton = (element) =>{
 
 const groupBy = (menu,category) =>{
 
-  return menu.reduce((acc,categoryName) => {
-
+  return menu.reduce((acc,categoryName) => {    
     let key = categoryName[category]
     if (!acc[key]){
       acc[key] =[]
@@ -116,7 +119,10 @@ const groupBy = (menu,category) =>{
     return acc 
   },{})
 }
-let categoriesList = groupBy(menu,"category");
+
+
+let categoriesList = groupBy(menu, "category");
+console.log(categoriesList)
 categoriesList.All= menu
 
 let keys = Object.keys(categoriesList)
@@ -135,6 +141,7 @@ const categoryFunc = (menu,categoriesList) => {
   buttonListener.forEach(element =>{
     element.addEventListener("click", function(){
       containerDOM.innerHTML = "";
+      createMenu.style.display="none"
       let keys = Object.keys(categoriesList);
       keys.forEach(item =>{
         if(element.innerHTML == item){
@@ -186,29 +193,113 @@ menu.forEach(element => {
   setMealCard(element.title,element.price,element.img,element.desc)
 });
 
+//--------------Create Menu------------------------
 
-let addMenu = document.querySelector("#addMenu");
-addMenu.addEventListener("click",function(){
-  let temptHTML = ""
-  temptHTML =
-  `<div class="col-md-5 mealBox">
-  <div class="imgBox">
-    <img class="photo" src=# alt="img"
-     alt="">
-  </div>
-  <div class="contentBox">
-    <div class="mealHeader">
-      <h4 class="mealTitle">Title</h4>
-    </div>
-    <div class="mealText">
-      <p>
-        Description
-      </p>
-     </div>
-      <div class="price">
-      <h3>Price ₺</h3>
-     </div>
-    </div>
-  </div>`
-  containerDOM.innerHTML += temptHTML;
+const titleValue = document.querySelector("#titleValue");
+const titleInput = document.querySelector("#titleInput");
+const descriptionValue = document.querySelector("#descriptionValue");
+const descriptionInput = document.querySelector("#descriptionInput");
+const priceValue = document.querySelector("#priceValue");
+const priceInput = document.querySelector("#priceInput");
+const categoryInput = document.querySelector("#categoryInput");
+const imgInput = document.querySelector("#imgInput");
+const createMenuBtn = document.querySelector("#create-btn");
+const addMenu = document.querySelector("#addMenu");
+const addMenuBox = document.querySelector(".addMenuBox");
+
+
+addMenu.addEventListener("click", () => {
+    containerDOM.innerHTML = "";
+    createMenu.style.display="flex"
 })
+
+
+titleInput.oninput = () => {
+  titleValue.innerHTML = titleInput.value;
+}
+descriptionInput.oninput = () => {
+  descriptionValue.innerHTML = descriptionInput.value;
+}
+priceInput.oninput = () => {
+  priceValue.innerHTML = priceInput.value + " ₺";
+}
+
+let count=10; //default olarak verilen objecte id:9 olduğu için 10dan başlattım.
+// let addMenuObj = [];
+
+const addMenuFunc = () => {
+  console.log(imgInput.value)
+
+  let addMenuValue = {
+    id : count,
+    title : titleInput.value,
+    category : categoryInput.value,
+    price : priceInput.value,
+    img : imgInput.value,
+    desc : descriptionInput.value ,
+  }
+  menu.push(addMenuValue);
+}
+
+createMenuBtn.addEventListener("click", () => {
+  addMenuFunc();
+  // menu.push(addMenuObj);
+  count++;
+  console.log(menu)
+
+  buttonDOM.innerHTML = ""
+
+  let categoriesList = groupBy(menu, "category");
+  categoriesList.All= menu
+
+  let keys = Object.keys(categoriesList)
+  
+  keys.forEach(element => {
+
+    setButton(`${element}`)
+  });
+  
+  categoryFunc(menu,categoriesList)
+
+
+
+  // keys.forEach(element => {
+  //   if(buttonListener.find(item => item.innerHTML !== element )){
+  //     console.log(buttonListener.find(item => item.innerHTML))
+  //   }
+  // });
+  // setButton(`${categoryInput.value}`)
+ 
+})
+
+
+
+
+// let addMenu = document.querySelector("#addMenu");
+// addMenu.addEventListener("click",function(){
+//   let temptHTML = ""
+//   temptHTML =
+//   `
+//   <div class="col-md-5 mealBox">
+//     <div class="imgBox">
+//       <img class="photo" src=# alt="img"
+//       alt="">
+//     </div>
+//     <div class="contentBox">
+//       <div class="mealHeader">
+//         <h4 class="mealTitle">Title</h4>
+//       </div>
+//       <div class="mealText">
+//         <p>
+//           Description
+//         </p>
+//       </div>
+//       <div class="price">
+//         <h3>Price ₺</h3>
+//       </div>
+//     </div>
+//   </div>
+//   `
+//   containerDOM.innerHTML += temptHTML;
+// })
+
